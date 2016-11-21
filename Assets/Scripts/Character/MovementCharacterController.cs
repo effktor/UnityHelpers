@@ -2,10 +2,14 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class MovementCharacteController : CharacterMovement
+public class MovementCharacterController : CharacterMovement
 {
     [SerializeField]
     private CharacterController _controller;
+
+    [Header("Settings")]
+    [SerializeField]
+    private float _speed;
 
     protected override void Reset()
     {
@@ -24,6 +28,6 @@ public class MovementCharacteController : CharacterMovement
     protected override void Update()
     {
         base.Update();
-        _controller.Move(_input.LeftInputAxis);
+        _controller.Move((_input.LeftInputAxis * _speed) * Time.deltaTime);
     }
 }

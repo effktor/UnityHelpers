@@ -6,6 +6,7 @@ using UnityEngine;
 
 public abstract class CharacterMovement : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField]
     protected InputController _input;
 
