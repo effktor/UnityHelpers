@@ -39,4 +39,9 @@ public abstract class InputController : MonoBehaviour
     protected virtual void Update()
     {
     }
+
+    protected virtual void Start()
+    {
+
+    }
 }

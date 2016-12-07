@@ -18,7 +18,7 @@ public class MovementCharacterController : CharacterMovement
     [SerializeField]
     private float _gravity;
 
-    private Vector3 moveInput;
+    private Vector3 _moveInput;
 
     protected override void Reset()
     {
@@ -38,10 +38,10 @@ public class MovementCharacterController : CharacterMovement
     {
         base.Update();
 
-        moveInput = Vector3.Lerp(_controller.velocity, _input.LeftInputAxis * _speed, _smoothSpeed);
+        _moveInput = Vector3.Lerp(_controller.velocity, _input.LeftInputAxis * _speed, _smoothSpeed);
 
-        moveInput.y += _gravity * Time.deltaTime;
+        _moveInput.y += _gravity * Time.deltaTime;
 
-        _controller.Move(moveInput * Time.deltaTime);
+        _controller.Move(_moveInput * Time.deltaTime);
     }
 }

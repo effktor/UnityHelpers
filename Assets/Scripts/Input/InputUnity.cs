@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class InputControllerUnity : InputController
+public class InputUnity : InputController
 {
     protected override void Update()
     {
