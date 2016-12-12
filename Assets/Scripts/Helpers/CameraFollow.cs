@@ -19,7 +19,7 @@ public class CameraFollow : MonoBehaviour
         var newPos = this.transform.position;
         var behind = followObject.position - (followObject.forward * distance);
         newPos.y = Mathf.Lerp(newPos.y, followObject.position.y + height, speed);
-        newPos = Vector3.Lerp(newPos, DistanceKepp(newPos, followObject.position, distance + height), speed);
+        newPos = Vector3.Lerp(newPos, newPos.StayAtDistance(followObject.position, distance + height), speed);
         this.transform.position = newPos;
         this.transform.LookAt(followObject);
     }
