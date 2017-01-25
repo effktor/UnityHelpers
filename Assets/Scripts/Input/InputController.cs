@@ -8,6 +8,10 @@ public abstract class InputController : MonoBehaviour
     protected Vector3 _lefttAxis;
     protected Vector3 _rightAxis;
 
+    public delegate void EventHandler();
+
+    public event EventHandler OnFireOnePressed;
+
     /// <summary>
     /// Returns the current left input Axis.
     /// </summary>
@@ -43,5 +47,11 @@ public abstract class InputController : MonoBehaviour
     protected virtual void Start()
     {
 
+    }
+
+    public void PressedFireOne()
+    {
+        if (OnFireOnePressed != null)
+            OnFireOnePressed();
     }
 }

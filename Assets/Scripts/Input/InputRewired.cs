@@ -7,6 +7,8 @@ public class InputRewired : InputController
 
     private Player _playerInput;
 
+
+
     protected override void Start()
     {
         base.Start();
@@ -23,9 +25,15 @@ public class InputRewired : InputController
 
     private void UpdateButtons()
     {
-        IsFirePrimary = Input.GetButtonDown("Fire1");
-        IsFireSecondary = Input.GetButtonDown("Fire2");
+//        IsFirePrimary = Input.GetButtonDown("Fire1");
+//        IsFireSecondary = Input.GetButtonDown("Fire2");
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            PressedFireOne();
+        }
     }
+
 
     private void UpdateAxis()
     {

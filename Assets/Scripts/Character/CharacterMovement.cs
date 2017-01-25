@@ -24,4 +24,9 @@ public abstract class CharacterMovement : MonoBehaviour
     protected virtual void Update()
     {
     }
+
+    protected virtual void FixedUpdate()
+    {
+
+    }
 }

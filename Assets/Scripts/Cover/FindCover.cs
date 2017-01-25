@@ -28,7 +28,7 @@ public class FindCover : MonoBehaviour
     public Transform target;
     private NavMeshHit hit;
     private NavMeshHit hit2;
-    private NavMeshHit hit3;
+    public NavMeshHit hit3;
     private bool blocked = false;
     private bool blocked2 = false;
     private bool blocked3 = false;

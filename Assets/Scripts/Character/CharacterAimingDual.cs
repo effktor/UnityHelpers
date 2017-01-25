@@ -43,6 +43,9 @@ public class CharacterAimingDual : CharacterAiming
 
 
         inputVector = this.transform.forward * 0.5f;
+
+        Time.timeScale = 0.2f;
+        Time.fixedDeltaTime = Time.timeScale * 0.02f;
     }
 
     protected override void Update()
@@ -55,7 +58,7 @@ public class CharacterAimingDual : CharacterAiming
         _position = this.transform.position;
 
 
-        if (_input.LeftInputAxis.magnitude > 0.1f)
+        //if (_input.LeftInputAxis.magnitude > 0.1f)
             this.transform.rotation = Quaternion.Slerp(this.transform.rotation, _rotation, _lookAtSmooth);
 
 

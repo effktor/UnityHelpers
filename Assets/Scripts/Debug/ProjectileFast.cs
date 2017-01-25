@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ProjectileFast : MonoBehaviour
 {
@@ -15,14 +14,10 @@ public class ProjectileFast : MonoBehaviour
     private void Start()
     {
         _previousPosition = this.transform.position;
+
     }
 
     private void Update()
-    {
-        transform.Translate((new Vector3(0, 0, _velocity)) * Time.deltaTime);
-    }
-
-    private void FixedUpdate()
     {
         _movementThisStep = this.transform.position - _previousPosition;
 
@@ -38,5 +33,17 @@ public class ProjectileFast : MonoBehaviour
         }
 
         _previousPosition = this.transform.position;
+
+        transform.Translate((new Vector3(0, 0, _velocity)) * Time.deltaTime);
+
+        Debug.Log("UPDATE: " + fixedUpdate++);
+    }
+
+    private int fixedInt = 0;
+    private int fixedUpdate = 0;
+
+    private void FixedUpdate()
+    {
+        Debug.Log("FIXED: " + fixedInt++);
     }
 }
